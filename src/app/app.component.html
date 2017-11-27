@@ -1,147 +1,133 @@
-<app-layout>
-</app-layout>
-
-<!-- <mat-tab-group color="accent">
-  <mat-tab label="Tab 1">
-      <ng-template mat-tab-label>
-          New Tab Label
-        </ng-template>
-    Content 1
-  </mat-tab>
-  <mat-tab label="Tab 2">Content 2</mat-tab>
-</mat-tab-group> -->
-<div fxLayout="row" fxLayoutAlign="center center" fxLayout fxLayout.sm="column" fxLayoutGap="10px" style="margin-top: 15px;">
-  <mat-card class="example-card" fxFlex="30%">
-    <mat-card-header>
-      <mat-card-title>Primary Info</mat-card-title>
-      <mat-card-subtitle>Section 1</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content fxLayout="column">
-
-      <mat-form-field>
-        <input matInput placeholder="First name">
-      </mat-form-field>
-
-      <mat-form-label>Checkbox label</mat-form-label>
-      <br>
-      <mat-checkbox>Check me!</mat-checkbox>
-      <mat-checkbox>Yes! Check me too</mat-checkbox>
-      <mat-checkbox>Ok whatever. Check me too</mat-checkbox>
-      <br>
-
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker" placeholder="Case registered date" (focus)="picker.open()" (click)="picker.open()">
-        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput placeholder="User name">
-      </mat-form-field>
-      <mat-form-field>
-          <input matInput type="text" placeholder="Hobby" #hobby/>
-          <button mat-button *ngIf="hobby.value" matSuffix mat-icon-button (click)="hobby.value=''">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-
-  <mat-card class="example-card" fxFlex="30%">
-    <mat-card-header>
-      <mat-card-title>Primary Info</mat-card-title>
-      <mat-card-subtitle>Section 2</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content fxLayout="column">
-
-      <mat-form-field>
-        <input matInput placeholder="Favorite place">
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput placeholder="Favorite animal">
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput placeholder="Pet name">
-      </mat-form-field>
-      <mat-radio-group name="my_options">
-        <mat-radio-label>Gender</mat-radio-label>
-        <br>
-        <br>
-        <mat-radio-button value="1">Male</mat-radio-button> &nbsp;
-        <mat-radio-button value="2">Female</mat-radio-button>&nbsp;
-        <mat-radio-button value="3">Others</mat-radio-button>&nbsp;
-        <br>
-        <br>
-      </mat-radio-group>
-      <mat-form-field>
-        <input matInput placeholder="Superhero you like">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-select placeholder="Select multiple fruits" multiple>
-          <mat-option value="1">Mango</mat-option>
-          <mat-option value="2">Apple</mat-option>
-          <mat-option value="3">Papaya</mat-option>
-          <mat-option value="4">Orange</mat-option>
-          <mat-option value="5">Lemon</mat-option>
-          <mat-option value="6">Watermelon</mat-option>
-          <mat-option value="7">Guava</mat-option>
-          <mat-option value="8">Pomegranate</mat-option>
-          <mat-option value="9">Strawberry</mat-option>
-          <mat-option value="10">Kiwi</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-
-  <mat-card class="example-card" fxFlex="30%">
-    <mat-card-header>
-      <mat-card-title>Primary Info</mat-card-title>
-      <mat-card-subtitle>Section 3</mat-card-subtitle>
-    </mat-card-header>
-    <mat-card-content fxLayout="column">
-
-      <mat-form-field>
-        <input matInput placeholder="Company">
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput #city placeholder="City" maxlength="55">
-        <mat-hint align="end">{{city.value.length}} / 55</mat-hint>
-      </mat-form-field>
-
-      <mat-form-field>
-        <mat-select placeholder="Favorite food">
-          <mat-option value="1">Pizza</mat-option>
-          <mat-option value="1">Burger</mat-option>
-          <mat-option value="1">Biryani</mat-option>
-          <mat-option value="1">Upma</mat-option>
-          <mat-option value="1">Dosa</mat-option>
-          <mat-option value="1">Noodles</mat-option>
-          <mat-option value="1">Sushi</mat-option>
-        </mat-select>
-      </mat-form-field>
-
-      <mat-form-field>
-        <input matInput placeholder="Country">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Description">
-      </mat-form-field>
-
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+<app-layout (sidenavToggleEvent)="sidenav.toggle()"></app-layout>
+<mat-sidenav-container class="sidenav-fab-container">
+   <mat-sidenav #sidenav mode="side" class="sidenav" opened="true">
+      <ul class="sidenav-list">
+         <li><a href="https://www.google.com"><i class="fa fa-google" aria-hidden="true"></i> <span>  Google </span></a></li>
+         <li><a href="https://www.fb.com"><i class="fa fa-facebook-square" aria-hidden="true"></i><span>  Facebook </span></a></li>
+      </ul>
+   </mat-sidenav>
+   <div fxLayout="row" fxLayoutAlign="center center" fxLayout fxLayout.sm="column" fxLayoutGap="10px" style="margin-top: 15px;">
+      <mat-card class="example-card" fxFlex="30%">
+         <mat-card-header>
+            <mat-card-title>Primary Info</mat-card-title>
+            <mat-card-subtitle>Section 1</mat-card-subtitle>
+         </mat-card-header>
+         <mat-card-content fxLayout="column">
+            <mat-form-field>
+               <input matInput placeholder="First name">
+            </mat-form-field>
+            <mat-form-label>Checkbox label</mat-form-label>
+            <br>
+            <mat-checkbox>Check me!</mat-checkbox>
+            <mat-checkbox>Yes! Check me too</mat-checkbox>
+            <mat-checkbox>Ok whatever. Check me too</mat-checkbox>
+            <br>
+            <mat-form-field>
+               <input matInput [matDatepicker]="picker" placeholder="Case registered date" (focus)="picker.open()" (click)="picker.open()">
+               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+               <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <mat-form-field>
+               <input matInput placeholder="User name">
+            </mat-form-field>
+            <mat-form-field>
+               <input matInput type="text" placeholder="Hobby" #hobby/>
+               <button mat-button *ngIf="hobby.value" matSuffix mat-icon-button (click)="hobby.value=''">
+               <mat-icon>close</mat-icon>
+               </button>
+            </mat-form-field>
+         </mat-card-content>
+         <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+         </mat-card-actions>
+      </mat-card>
+      <mat-card class="example-card" fxFlex="30%">
+         <mat-card-header>
+            <mat-card-title>Primary Info</mat-card-title>
+            <mat-card-subtitle>Section 2</mat-card-subtitle>
+         </mat-card-header>
+         <mat-card-content fxLayout="column">
+            <mat-form-field>
+               <input matInput placeholder="Favorite place">
+            </mat-form-field>
+            <mat-form-field>
+               <input matInput placeholder="Favorite animal">
+            </mat-form-field>
+            <mat-form-field>
+               <input matInput placeholder="Pet name">
+            </mat-form-field>
+            <mat-radio-group name="my_options">
+               <mat-radio-label>Gender</mat-radio-label>
+               <br>
+               <br>
+               <mat-radio-button value="1">Male</mat-radio-button>
+               &nbsp;
+               <mat-radio-button value="2">Female</mat-radio-button>
+               &nbsp;
+               <mat-radio-button value="3">Others</mat-radio-button>
+               &nbsp;
+               <br>
+               <br>
+            </mat-radio-group>
+            <mat-form-field>
+               <input matInput placeholder="Superhero you like">
+            </mat-form-field>
+            <mat-form-field>
+               <mat-select placeholder="Select multiple fruits" multiple>
+                  <mat-option value="1">Mango</mat-option>
+                  <mat-option value="2">Apple</mat-option>
+                  <mat-option value="3">Papaya</mat-option>
+                  <mat-option value="4">Orange</mat-option>
+                  <mat-option value="5">Lemon</mat-option>
+                  <mat-option value="6">Watermelon</mat-option>
+                  <mat-option value="7">Guava</mat-option>
+                  <mat-option value="8">Pomegranate</mat-option>
+                  <mat-option value="9">Strawberry</mat-option>
+                  <mat-option value="10">Kiwi</mat-option>
+               </mat-select>
+            </mat-form-field>
+         </mat-card-content>
+         <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+         </mat-card-actions>
+      </mat-card>
+      <mat-card class="example-card" fxFlex="30%">
+         <mat-card-header>
+            <mat-card-title>Primary Info</mat-card-title>
+            <mat-card-subtitle>Section 3</mat-card-subtitle>
+         </mat-card-header>
+         <mat-card-content fxLayout="column">
+            <mat-form-field>
+               <input matInput placeholder="Company">
+            </mat-form-field>
+            <mat-form-field>
+               <input matInput #city placeholder="City" maxlength="55">
+               <mat-hint align="end">{{city.value.length}} / 55</mat-hint>
+            </mat-form-field>
+            <mat-form-field>
+               <mat-select placeholder="Favorite food">
+                  <mat-option value="1">Pizza</mat-option>
+                  <mat-option value="1">Burger</mat-option>
+                  <mat-option value="1">Biryani</mat-option>
+                  <mat-option value="1">Upma</mat-option>
+                  <mat-option value="1">Dosa</mat-option>
+                  <mat-option value="1">Noodles</mat-option>
+                  <mat-option value="1">Sushi</mat-option>
+               </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+               <input matInput placeholder="Country">
+            </mat-form-field>
+            <mat-form-field>
+               <input matInput placeholder="Description">
+            </mat-form-field>
+         </mat-card-content>
+         <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+         </mat-card-actions>
+      </mat-card>
+   </div>
+</mat-sidenav-container>

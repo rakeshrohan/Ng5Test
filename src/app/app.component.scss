@@ -1,14 +1,31 @@
-.example-container {
-    width: 100%;
-    height: 100%;
+.sidenav-fab-container{
+  height:93%;
 }
-  
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
+.sidenav{
+  width: 10%;
+  background: gainsboro;
+}
+.sidenav-list{
+  margin-top:0px;
+  padding: 0px;
+  text-align: left;
+  li{
+    padding:10%;
+    list-style: none;
+    a{
+      text-decoration: none;
+    }
+    i, span{
+      color: black !important;
+    }
+    span {
+      margin-left: 10%;;
+    }
   }
-  
-  
-  
+  li:hover{
+        background-color: darkorange;
+        i, a, span{
+           color:white !important;
+       } 
+    }
+}
